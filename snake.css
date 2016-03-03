@@ -1,0 +1,39 @@
+body,
+div {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #eee;
+}
+
+.content{
+	margin: 0 auto;
+	text-align: center;
+}
+
+.game-zone {
+    width: 640px;
+    height: 640px;
+    background: #ccc;
+    position: relative;
+    margin: 0 auto;
+}
+
+.game-model {
+    display: none;
+}
+
+.bean,
+.snake-body {
+    width: 10px;
+    height: 10px;
+    background: black;
+    display: inline-block;
+    position: absolute;
+}
+
+.bean {
+    border-radius: 10px;
+}

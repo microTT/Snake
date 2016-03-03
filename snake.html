@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>贪吃蛇(中介者模式)</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="snake.css">
+</head>
+
+<body>
+    <header>
+        <nav>View on GitHub</nav>
+    </header>
+    <div class="content">
+        <header class="header">
+            <h1>Snake</h1>
+        </header>
+        <div id="game" class="game">
+            <span class="tips">使用最新版的现代浏览器可提高游戏体验哟!（如：Chrome、Firefox、Safari)</span>
+            <div id="game-zone" class="game-zone">
+                <noscript class="noscript">
+                    <p>您的浏览器未开启JavaScript，无法开始游戏！！
+                        <br> 请在浏览器设置中开启JavaScript方可开始游戏
+                    </p>
+                </noscript>
+                <div id="bean" class="bean"></div>
+                <div class="snake-body"></div>
+                <div class="snake-body"></div>
+                <div class="snake-body"></div>
+                <div class="snake-body"></div>
+                <div class="snake-body"></div>
+            </div>
+            <div id="score-panel" class="score-panel">
+                <span id="player-name">undefined</span>
+                <span id="player-score">00000</span>
+
+            </div>
+            <div class="game-model">
+                <div id="snake" class="snake">
+                </div>
+            </div>
+        </div>
+        <!-- <footer class="footer"></footer> -->
+    </div>
+    <footer>
+        <script src="snake.js" type="text/javascript"></script>
+    </footer>
+</body>
+
+</html>
