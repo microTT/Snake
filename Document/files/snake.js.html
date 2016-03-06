@@ -1,6 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>snake.js</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="../assets/css/logo.png" title="" width="117" height="52"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: </em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/Bean.html">Bean</a></li>
+                                <li><a href="../classes/Dom.html">Dom</a></li>
+                                <li><a href="../classes/Event.html">Event</a></li>
+                                <li><a href="../classes/GameControl.html">GameControl</a></li>
+                                <li><a href="../classes/GameZone.html">GameZone</a></li>
+                                <li><a href="../classes/Player.html">Player</a></li>
+                                <li><a href="../classes/ScorePanel.html">ScorePanel</a></li>
+                                <li><a href="../classes/Snake.html">Snake</a></li>
+                                <li><a href="../classes/Util.html">Util</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/Snake Game.html">Snake Game</a></li>
+                                <li><a href="../modules/Util.html">Util</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: snake.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
 window.setTimeout(function() {
-    'use strict';
-    console.log("game loading");
+    &#x27;use strict&#x27;;
+    console.log(&quot;game loading&quot;);
 
     /**
      * 包含一些库函数
@@ -17,18 +109,18 @@ window.setTimeout(function() {
      * @param  {Function} [callback] 创建完成后的回调函数
      * @return {Namespace}            返回调用对象本身
      * @example
-     *     MyNameSpace.createChain("myProtype.protype", function() {
-     *         alert("create success!");
+     *     MyNameSpace.createChain(&quot;myProtype.protype&quot;, function() {
+     *         alert(&quot;create success!&quot;);
      *     });
      */
     Util.createChain = function(nsString, callback) {
-        var parts = nsString.split("."),
+        var parts = nsString.split(&quot;.&quot;),
             undefined,
             parent = this,
             i = 0,
             len = 0;
 
-        for (i = 0, len = parts.length; i < len; i++) {
+        for (i = 0, len = parts.length; i &lt; len; i++) {
             if (parent[parts[i]] === undefined) {
                 parent[parts[i]] = {};
             }
@@ -36,7 +128,7 @@ window.setTimeout(function() {
             parent = parent[parts[i]];
         }
 
-        if (typeof callback === "function") {
+        if (typeof callback === &quot;function&quot;) {
             callback();
         }
 
@@ -48,7 +140,7 @@ window.setTimeout(function() {
      * 一些与事件相关的库函数
      * @class Event
      */
-    Util.createChain("Event");
+    Util.createChain(&quot;Event&quot;);
 
     /**
      * 为DOM元素绑定事件，动态定义函数，第一次运行时进行浏览器能力检测并重定义函数
@@ -67,12 +159,12 @@ window.setTimeout(function() {
             }
         } else if (element.attachEvent) {
             Util.Event.addHandler = function(element, type, handler) {
-                element.addHandler("on" + type, handler);
+                element.addHandler(&quot;on&quot; + type, handler);
                 return element;
             }
         } else {
             Util.Event.addHandler = function(element, type, handler) {
-                element["on" + type] = handler;
+                element[&quot;on&quot; + type] = handler;
                 return element;
             }
         }
@@ -99,12 +191,12 @@ window.setTimeout(function() {
             }
         } else if (element.detachEvent) {
             Util.Event.removeHandler = function(element, type, handler) {
-                element.detachEvent("on" + type, handler);
+                element.detachEvent(&quot;on&quot; + type, handler);
                 return element;
             }
         } else {
             Util.Event.removeHandler = function(element, type, handler) {
-                element["on" + type] = null;
+                element[&quot;on&quot; + type] = null;
                 return element;
             }
         }
@@ -149,7 +241,7 @@ window.setTimeout(function() {
      * @return {HTMLElement}       事件的目标DOM元素
      */
     Util.Event.stopPropagation = function(event) {
-        if (typeof event.stopPropagation === "function") {
+        if (typeof event.stopPropagation === &quot;function&quot;) {
             Util.Event.stopPropagation = function(event) {
                 event.stopPropagation();
                 return Util.Event.getTarget(event);
@@ -174,7 +266,7 @@ window.setTimeout(function() {
      * @return {HTMLElement}       事件的目标DOM元素
      */
     Util.Event.preventDefault = function(event) {
-        if (typeof event.preventDefault === "function") {
+        if (typeof event.preventDefault === &quot;function&quot;) {
             Util.Event.preventDefault = function(event) {
                 event.preventDefault();
                 return Util.Event.getTarget(event);
@@ -199,14 +291,14 @@ window.setTimeout(function() {
      * @return {Number}       按键编码
      */
     Util.Event.getCharCode = function(event) {
-        return typeof event.charCode === "number" ? event.charCode : event.keyCode;
+        return typeof event.charCode === &quot;number&quot; ? event.charCode : event.keyCode;
     }
 
     /**
      * 与Dom操作有关的库函数
      * @class Dom
      */
-    Util.createChain("Dom");
+    Util.createChain(&quot;Dom&quot;);
 
     /**
      * 编辑DOM对象的className。使用最新的HTML5的classList对象操作对象className,若浏览器不支持则采用“手动”处理的方式。
@@ -214,9 +306,9 @@ window.setTimeout(function() {
      * @method editClassName
      * @for Dom
      * @param  {HTMLElement} element     要进行类名操作的DOM对象
-     * @param  {String} option      操作类型，只能为["add", "remove", "contains", "toggle"]中的一个，若不为要求字符串其中之一则抛出错误。
+     * @param  {String} option      操作类型，只能为[&quot;add&quot;, &quot;remove&quot;, &quot;contains&quot;, &quot;toggle&quot;]中的一个，若不为要求字符串其中之一则抛出错误。
      * @param  {[String]} classString 要进行编辑的类名
-     * @return {HTMLElement|Boolean}             若option为"contains",则返回一个Boolean表示检测包含的结果，若为其他操作则返回类名操作的DOM对象
+     * @return {HTMLElement|Boolean}             若option为&quot;contains&quot;,则返回一个Boolean表示检测包含的结果，若为其他操作则返回类名操作的DOM对象
      */
     Util.Dom.editClassName = function(element, option, classString) {
         if (element.classList) {
@@ -230,7 +322,7 @@ window.setTimeout(function() {
                         return optionResult;
                     }
                 } catch (error) {
-                    throw new Error("Edit className Error.");
+                    throw new Error(&quot;Edit className Error.&quot;);
                 }
             }
         } else {
@@ -240,28 +332,28 @@ window.setTimeout(function() {
                     i = 0,
                     len = 0;
 
-                if (option === "add") {
+                if (option === &quot;add&quot;) {
                     className.push(classString);
                 } else {
-                    for (i = 0, len = className; i < len; i++) {
+                    for (i = 0, len = className; i &lt; len; i++) {
                         if (className[i] === classString) {
                             optionResult = true;
                             break;
                         }
                     }
 
-                    if (option === "remove") {
+                    if (option === &quot;remove&quot;) {
                         className = optionResult ? className.splice(i, 1) : className;
-                    } else if (option === "contains") {
+                    } else if (option === &quot;contains&quot;) {
                         return optionResult;
-                    } else if (option === "toggle") {
+                    } else if (option === &quot;toggle&quot;) {
                         className = optionResult ? className.splice(i, 1) : className.push(classString);
                     } else {
-                        throw new Error("Edit className Error.");
+                        throw new Error(&quot;Edit className Error.&quot;);
                     }
                 }
 
-                element.className = className.join(" ");
+                element.className = className.join(&quot; &quot;);
 
                 return element;
             }
@@ -277,7 +369,7 @@ window.setTimeout(function() {
      * @return {CSSStyleDeclaration}         DOM对象的style对象
      */
     Util.Dom.getComputedStyle = function(element) {
-        if (typeof window.getComputedStyle === "function") {
+        if (typeof window.getComputedStyle === &quot;function&quot;) {
             Util.Dom.getComputedStyle = function(element) {
                 return window.getComputedStyle(element, null);
             }
@@ -294,18 +386,19 @@ window.setTimeout(function() {
      * @module Snake Game
      */
 
+
     /**
      * 玩家 类型，
      * @class  Player
      * @constructor
      * @param {String} [name=S_(random())]    玩家的昵称，可选参数
-     * @param {Object} [keyCode={"UP": 87, "RIGHT": 68, "DOWN": 83, "LEFT": 65,}] 必须包含"UP", "RIGHT", "DOWN", "LEFT",属性的对象。即表示玩家的键位,可选参数
+     * @param {Object} [keyCode={&quot;UP&quot;: 87, &quot;RIGHT&quot;: 68, &quot;DOWN&quot;: 83, &quot;LEFT&quot;: 65,}] 必须包含&quot;UP&quot;, &quot;RIGHT&quot;, &quot;DOWN&quot;, &quot;LEFT&quot;,属性的对象。即表示玩家的键位,可选参数
      * @param {Number} [keyCode.UP=87] 向上的键位编码
      * @param {Number} [keyCode.RIGHT=68] 向右的键位编码
      * @param {Number} [keyCode.DOWN=83] 向下的键位编码
      * @param {Number} [keyCode.left=65] 想做的键位编码
      * @example
-     *     var Tom = new player("Tom");
+     *     var Tom = new player(&quot;Tom&quot;);
      *     var Jerry = Player();
      */
     function Player(name, keyCode) {
@@ -316,12 +409,12 @@ window.setTimeout(function() {
             return new Player(keyCode, name);
         }
 
-        if (Object.prototype.toString(keyCode) !== "[object object]") {
+        if (Object.prototype.toString(keyCode) !== &quot;[object object]&quot;) {
             keyCode = {
-                "UP": 87,
-                "RIGHT": 68,
-                "DOWN": 83,
-                "LEFT": 65,
+                &quot;UP&quot;: 87,
+                &quot;RIGHT&quot;: 68,
+                &quot;DOWN&quot;: 83,
+                &quot;LEFT&quot;: 65,
             };
         }
 
@@ -342,8 +435,8 @@ window.setTimeout(function() {
         this.score = 0;
 
         /**
-         * 玩家的键位，必须包含四个属性"UP", "RIGHT", "DOWN", "LEFT",且每个属性的类型为 Number， 表示键位的编码
-         * 可由用户自定义，若用户未输入，则使用默认的"W、A、S、D"，来控制方向
+         * 玩家的键位，必须包含四个属性&quot;UP&quot;, &quot;RIGHT&quot;, &quot;DOWN&quot;, &quot;LEFT&quot;,且每个属性的类型为 Number， 表示键位的编码
+         * 可由用户自定义，若用户未输入，则使用默认的&quot;W、A、S、D&quot;，来控制方向
          * @property keyCode
          * @for  Player
          * @type {[Object]}
@@ -356,7 +449,7 @@ window.setTimeout(function() {
          * @property name
          * @type {String}
          */
-        this.name = name ? name : "S_" + (Math.random()).toString().slice(2);
+        this.name = name ? name : &quot;S_&quot; + (Math.random()).toString().slice(2);
     }
 
     /**
@@ -366,7 +459,7 @@ window.setTimeout(function() {
      * @return {Player} 返回 this 对象, 即调用方法的Player对象本身
      */
     Player.prototype.flushSpeedLevel = function() {
-        if (this.score > this.speedLevel * this.speedLevel * 100) {
+        if (this.score &gt; this.speedLevel * this.speedLevel * 100) {
             this.speedLevel++;
         }
 
@@ -385,8 +478,8 @@ window.setTimeout(function() {
          * @for  Snake
          * @type {Array}
          */
-        "element": (function() {
-            var snakeBody = document.getElementById("game").getElementsByClassName("snake-body");
+        &quot;element&quot;: (function() {
+            var snakeBody = document.getElementById(&quot;game&quot;).getElementsByClassName(&quot;snake-body&quot;);
 
             return Array.prototype.slice.call(snakeBody);
         }()),
@@ -399,27 +492,27 @@ window.setTimeout(function() {
          * @for Snake
          * @type {Object}
          */
-        "position": {
-            "x": [-1, -1, -1, -1, -1],
-            "y": [-1, -1, -1, -1, -1]
+        &quot;position&quot;: {
+            &quot;x&quot;: [-1, -1, -1, -1, -1],
+            &quot;y&quot;: [-1, -1, -1, -1, -1]
         },
 
         /**
          * 一个立即执行函数，对象定义期间运行，返回一个对象
-         * 对象组成 Snake 对象的单个 DOM 对象的尺寸的一个Object对象，对象包含两个 Number 类型的属性"width", "height"
+         * 对象组成 Snake 对象的单个 DOM 对象的尺寸的一个Object对象，对象包含两个 Number 类型的属性&quot;width&quot;, &quot;height&quot;
          * @property bodySize
          * @for Snake
          * @type {Object}
          */
-        "bodySize": (function() {
+        &quot;bodySize&quot;: (function() {
             var getComputedStyle = Util.Dom.getComputedStyle,
-                snakeBodyStyle = getComputedStyle(document.getElementsByClassName("snake-body")[0]),
+                snakeBodyStyle = getComputedStyle(document.getElementsByClassName(&quot;snake-body&quot;)[0]),
                 snakeBodyWidth = parseInt(snakeBodyStyle.width),
                 snakeBodyHeight = parseInt(snakeBodyStyle.height);
 
             return {
-                "width": snakeBodyWidth,
-                "height": snakeBodyHeight
+                &quot;width&quot;: snakeBodyWidth,
+                &quot;height&quot;: snakeBodyHeight
             };
         }()),
 
@@ -429,7 +522,7 @@ window.setTimeout(function() {
          * @for Snake
          * @return {HTMLElement} 组成 Snake 的原DOM对象
          */
-        "generateNewBody": function() {
+        &quot;generateNewBody&quot;: function() {
             var snakeBodyElem = this.element[this.element.length - 1],
                 newBody = snakeBodyElem.cloneNode(true);
 
@@ -451,37 +544,37 @@ window.setTimeout(function() {
          * @for Bean
          * @type {HTMLElement}
          */
-        "element": (function() {
-            return document.getElementById("bean");
+        &quot;element&quot;: (function() {
+            return document.getElementById(&quot;bean&quot;);
         }()),
 
         /**
-         * 包含 Bean 当前位于游戏栅格区的位置，为一个 Object 对象，对象有两个 Number 类型的属性"x","y"
+         * 包含 Bean 当前位于游戏栅格区的位置，为一个 Object 对象，对象有两个 Number 类型的属性&quot;x&quot;,&quot;y&quot;
          * @property position
          * @for Bean
          * @type {Objext}
          */
-        "position": {
-            "x": -1,
-            "y": -1
+        &quot;position&quot;: {
+            &quot;x&quot;: -1,
+            &quot;y&quot;: -1
         },
 
         /**
          * 一个立即执行函数，在对象定义期间运行
-         * 返回一个对象包含 Bean 对象的 DOM对象的大小，即宽和高，该 Object 对象包含两个 Number 类型的属性"width", "height"
+         * 返回一个对象包含 Bean 对象的 DOM对象的大小，即宽和高，该 Object 对象包含两个 Number 类型的属性&quot;width&quot;, &quot;height&quot;
          * @property size
          * @for Bean
          * @type {Object}
          */
-        "size": (function() {
+        &quot;size&quot;: (function() {
             var getComputedStyle = Util.Dom.getComputedStyle,
-                beanStyle = getComputedStyle(document.getElementById("bean")),
+                beanStyle = getComputedStyle(document.getElementById(&quot;bean&quot;)),
                 beanWidth = parseInt(beanStyle.width),
                 beanHeight = parseInt(beanStyle.height);
 
             return {
-                "width": beanWidth,
-                "height": beanHeight
+                &quot;width&quot;: beanWidth,
+                &quot;height&quot;: beanHeight
             };
         }()),
     };
@@ -493,29 +586,29 @@ window.setTimeout(function() {
     var ScorePanel = {
         /**
          * 一个立即执行函数，在对象定义的期间运行
-         * 返回一个包含组成 SocrePanel 的DOM对象的 Object 对象，该对象包含两个 HTMLElement 类型的属性,"name", "score"
+         * 返回一个包含组成 SocrePanel 的DOM对象的 Object 对象，该对象包含两个 HTMLElement 类型的属性,&quot;name&quot;, &quot;score&quot;
          * @property element
          * @for ScorePanel
          * @type {Object}
          */
-        "element": (function() {
-            var name = document.getElementById("player-name"),
-                score = document.getElementById("player-score");
+        &quot;element&quot;: (function() {
+            var name = document.getElementById(&quot;player-name&quot;),
+                score = document.getElementById(&quot;player-score&quot;);
             return {
-                "name": name,
-                "score": score
+                &quot;name&quot;: name,
+                &quot;score&quot;: score
             };
         }()),
 
         /**
          * 刷新计分板的显示
          * @method flushScore
-         * @param  {Object} player 包含要显示游戏分数的对象，该Object 对象必须包含两个属性 "name", "score"
+         * @param  {Object} player 包含要显示游戏分数的对象，该Object 对象必须包含两个属性 &quot;name&quot;, &quot;score&quot;
          * @param  {String} player.name 包含要显示游戏分数的对象名称
          * @param  {Number} player.score 包含要显示游戏分数的对象分数
          * @return {ScorePanel}        返回this,即调用该方法的对象
          */
-        "flushScore": function(player) {
+        &quot;flushScore&quot;: function(player) {
             ScorePanel.element.name.innerHTML = player.name;
             ScorePanel.element.score.innerHTML = player.score;
 
@@ -531,34 +624,34 @@ window.setTimeout(function() {
     var GameZone = {
         /**
          * 一个立即执行函数，在对象定义的期间运行
-         * 返回一个包含游戏栅格区实际大小的 Object 对象， 该对象包含两个 Number 类型的属性"width", "height"
+         * 返回一个包含游戏栅格区实际大小的 Object 对象， 该对象包含两个 Number 类型的属性&quot;width&quot;, &quot;height&quot;
          * @property size
          * @for GameZone
          * @type {Objext}
          */
-        "size": (function() {
+        &quot;size&quot;: (function() {
             var getComputedStyle = Util.Dom.getComputedStyle,
-                gameZoneStyle = getComputedStyle(document.getElementById("game-zone")),
+                gameZoneStyle = getComputedStyle(document.getElementById(&quot;game-zone&quot;)),
                 gameZoneWidth = parseInt(gameZoneStyle.width),
                 gameZoneHeight = parseInt(gameZoneStyle.height);
 
             return {
-                "width": gameZoneWidth,
-                "height": gameZoneHeight
+                &quot;width&quot;: gameZoneWidth,
+                &quot;height&quot;: gameZoneHeight
             };
         }()),
 
         /**
-         * 包含游戏区栅格化后的数据，该对象包含四个 Number 类型的属性，”x" 横向的栅格数量，"y" 纵向的栅格数量，"metaWidth" 元栅格的宽，"metaHeight" 元栅格的高
+         * 包含游戏区栅格化后的数据，该对象包含四个 Number 类型的属性，”x&quot; 横向的栅格数量，&quot;y&quot; 纵向的栅格数量，&quot;metaWidth&quot; 元栅格的宽，&quot;metaHeight&quot; 元栅格的高
          * @property callSize
          * @for GameZone
          * @type {Object}
          */
-        "cellSize": {
-            "x": 0,
-            "y": 0,
-            "metaWidth": 0,
-            "metaHeight": 0
+        &quot;cellSize&quot;: {
+            &quot;x&quot;: 0,
+            &quot;y&quot;: 0,
+            &quot;metaWidth&quot;: 0,
+            &quot;metaHeight&quot;: 0
         }
     }
 
@@ -570,12 +663,12 @@ window.setTimeout(function() {
     var GameControl = {
         /**
          * 游戏的参与者数组数组成员为 Object 对象，
-         * 对象包括四个属性"player" 玩家对象，"Snake" 玩家对应的 Snake 对象，"currentDirection" 当前贪吃蛇的运动方向，"nextDirection" 即将转换的方向
+         * 对象包括四个属性&quot;player&quot; 玩家对象，&quot;Snake&quot; 玩家对应的 Snake 对象，&quot;currentDirection&quot; 当前贪吃蛇的运动方向，&quot;nextDirection&quot; 即将转换的方向
          * @property participants
          * @for GameControl
          * @type {Array}
          */
-        "participants": [],
+        &quot;participants&quot;: [],
 
         /**
          * Snake 的运动方向的枚举数组，常量不可更改
@@ -584,7 +677,7 @@ window.setTimeout(function() {
          * @type {Array}
          * @readOnly
          */
-        "SNAKEDIRECTION": ["UP", "RIGHT", "DOWN", "LEFT"],
+        &quot;SNAKEDIRECTION&quot;: [&quot;UP&quot;, &quot;RIGHT&quot;, &quot;DOWN&quot;, &quot;LEFT&quot;],
 
         /**
          * Snake 的每次移动的初始间隔时间，即 Snake 的速度，常量不可更改
@@ -593,7 +686,7 @@ window.setTimeout(function() {
          * @type {Number}
          * @readOnly
          */
-        "INITIALSPEED": 800,
+        &quot;INITIALSPEED&quot;: 800,
 
         /**
          * 游戏玩家的最高等级，常量不可更改
@@ -602,7 +695,7 @@ window.setTimeout(function() {
          * @type {Number}
          * @readOnly
          */
-        "MAXSPEEDLEVEL": 10,
+        &quot;MAXSPEEDLEVEL&quot;: 10,
 
         /**
          * 中介者对象的初始化方法，包括生成 Snake Bean Player、初始化游戏栅格网等操作。
@@ -610,20 +703,20 @@ window.setTimeout(function() {
          * @for GameControl
          * @return {GameContol} 返回 this, 即调用初始化的对象
          */
-        "init": function() {
+        &quot;init&quot;: function() {
             var eventUtil = Util.Event,
                 player = new Player();
 
             this.participants.push({
-                "player": player,
-                "snake": Snake,
-                "currentDirection": "LEFT",
-                "nextDirection": "LEFT"
+                &quot;player&quot;: player,
+                &quot;snake&quot;: Snake,
+                &quot;currentDirection&quot;: &quot;LEFT&quot;,
+                &quot;nextDirection&quot;: &quot;LEFT&quot;
             });
             this.calculateGameZoneCellSize();
             this.generateSnake();
             this.generateBean();
-            eventUtil.addHandler(window, "keydown", this.keyPress);
+            eventUtil.addHandler(window, &quot;keydown&quot;, this.keyPress);
 
             this.timeout = window.setTimeout(function() {
                 GameControl.snakeRunning();
@@ -638,7 +731,7 @@ window.setTimeout(function() {
          * @for GameControl
          * @return {GameControl} 返回this，即调用该方法的对象
          */
-        "calculateGameZoneCellSize": function() {
+        &quot;calculateGameZoneCellSize&quot;: function() {
             GameZone.cellSize.metaWidth = Math.max(Bean.size.width, Snake.bodySize.width);
             GameZone.cellSize.metaHeight = Math.max(Bean.size.height, Snake.bodySize.height);
             GameZone.cellSize.x = Math.floor(GameZone.size.width / GameZone.cellSize.metaWidth);
@@ -653,7 +746,7 @@ window.setTimeout(function() {
          * @for GameControl
          * @return {GameControl} 返回 this 对象，即调用方法的对象本身
          */
-        "generateSnake": function() {
+        &quot;generateSnake&quot;: function() {
             var snakeElem = Snake.element,
                 snakePosition = Snake.position,
                 positionStart = this.getEmptyCell(),
@@ -672,14 +765,14 @@ window.setTimeout(function() {
                 console.log(positionStart);
             }
 
-            for (i = 0, len = snakeElem.length; i < len; i++) {
+            for (i = 0, len = snakeElem.length; i &lt; len; i++) {
                 this.putElement2Cell(snakeElem[i], positionStart);
                 snakePosition.x[i] = positionStart.x;
                 snakePosition.y[i] = positionStart.y;
                 positionStart.x++;
             }
 
-            console.log("Generate Snake Success");
+            console.log(&quot;Generate Snake Success&quot;);
 
             return this;
         },
@@ -688,13 +781,13 @@ window.setTimeout(function() {
          * 使 Snake 对象增加一个元DOM对象，即“成长”，在某个位置（Snake尾部）生成一个新的DOM对象
          * @method SnakeGrowUp
          * @for GameControl
-         * @param  {Object} position 栅格区要增加显示元DOM对象的位置，该 Object 对象有两个 Number 类型的属性"x", "y"
+         * @param  {Object} position 栅格区要增加显示元DOM对象的位置，该 Object 对象有两个 Number 类型的属性&quot;x&quot;, &quot;y&quot;
          * @param  {Number} position.x 栅格区横向的栅格数量
          * @param  {Number} position.y 栅格区纵向的栅格数量
          * @return {GameControl}          返回 this 对象，即调用方法的对象本身；
          */
-        "snakeGrowUp": function(position) {
-            var game = document.getElementById("game-zone"),
+        &quot;snakeGrowUp&quot;: function(position) {
+            var game = document.getElementById(&quot;game-zone&quot;),
                 newBody = Snake.generateNewBody();
 
 
@@ -713,7 +806,7 @@ window.setTimeout(function() {
          * @for GameControl
          * @return {GameControl} 返回GameControl对象
          */
-        "snakeRunning": function() {
+        &quot;snakeRunning&quot;: function() {
             var that = GameControl,
                 direction = that.participants[0].nextDirection,
                 snakePosition = Snake.position,
@@ -742,8 +835,8 @@ window.setTimeout(function() {
                 newPosition.y = snakePosition.y[0];
             }
 
-            newPosition.x = newPosition.x < 0 ? newPosition.x + maxX : (newPosition.x >= maxX ? newPosition.x - maxX : newPosition.x);
-            newPosition.y = newPosition.y < 0 ? newPosition.y + maxY : (newPosition.y >= maxY ? newPosition.y - maxY : newPosition.y);
+            newPosition.x = newPosition.x &lt; 0 ? newPosition.x + maxX : (newPosition.x &gt;= maxX ? newPosition.x - maxX : newPosition.x);
+            newPosition.y = newPosition.y &lt; 0 ? newPosition.y + maxY : (newPosition.y &gt;= maxY ? newPosition.y - maxY : newPosition.y);
 
             if (that.isGameOver(newPosition)) {
                 that.gameOver();
@@ -786,14 +879,14 @@ window.setTimeout(function() {
          * @param  {Number} index2 要交换的元素2的索引
          * @return {Array}     交换后的数组
          */
-        "exchangArrayElementIndex": function(array, index1, index2) {
+        &quot;exchangArrayElementIndex&quot;: function(array, index1, index2) {
             var newArray = array.slice();
 
-            if (index1 === -1 && index2 !== -1) {
+            if (index1 === -1 &amp;&amp; index2 !== -1) {
                 newArray = newArray.splice(index2, 1).concat(newArray);
-            } else if (index1 !== -1 && index2 === -1) {
+            } else if (index1 !== -1 &amp;&amp; index2 === -1) {
                 newArray.push(newArray.splice(index1, 1)[0]);
-            } else if (index1 !== -1 && index2 !== -1) {
+            } else if (index1 !== -1 &amp;&amp; index2 !== -1) {
                 newArray.splice(index2, 1, newArray.splice(index1, 1, newArray[index2])[0]);
             }
 
@@ -806,7 +899,7 @@ window.setTimeout(function() {
          * @for GameControl
          * @return {GameControl} 返回 this 对象，即调用该方法的对象本身
          */
-        "generateBean": function() {
+        &quot;generateBean&quot;: function() {
             var beanElem = Bean.element,
                 beanPosition = Bean.position,
                 position = this.getEmptyCell();
@@ -815,7 +908,7 @@ window.setTimeout(function() {
             beanPosition.x = position.x;
             beanPosition.y = position.y;
 
-            console.log("Generate Bean Success");
+            console.log(&quot;Generate Bean Success&quot;);
 
             return this;
         },
@@ -824,13 +917,13 @@ window.setTimeout(function() {
          * 获得游戏栅格区内为空的栅格位置对象
          * @method getEmptyCell
          * @for GameControl
-         * @return {Object} 返回的Object 对象包含两个Number 类型的属性，即"x", "y"
+         * @return {Object} 返回的Object 对象包含两个Number 类型的属性，即&quot;x&quot;, &quot;y&quot;
          */
-        "getEmptyCell": function() {
+        &quot;getEmptyCell&quot;: function() {
             var gameZoneCell = GameZone.cellSize,
                 position = {
-                    "x": Math.floor(Math.random() * gameZoneCell.x),
-                    "y": Math.floor(Math.random() * gameZoneCell.y)
+                    &quot;x&quot;: Math.floor(Math.random() * gameZoneCell.x),
+                    &quot;y&quot;: Math.floor(Math.random() * gameZoneCell.y)
                 };
 
             while (!this.isEmptyCell(position)) {
@@ -844,12 +937,12 @@ window.setTimeout(function() {
         /**
          * 判断栅格区位置是否为空
          * @method isEmptyCell
-         * @param  {Object} position 需要判断的栅格区位置，该 Object对象内必须包含两个 Number 类型的属性"x", "y"
+         * @param  {Object} position 需要判断的栅格区位置，该 Object对象内必须包含两个 Number 类型的属性&quot;x&quot;, &quot;y&quot;
          * @param  {Number} position.x 需要判断的栅格区位置的横向坐标
          * @param  {Number} position.y 需要判断的栅格区位置的纵向坐标
          * @return {Boolean}          为空返回true, 否则返回false
          */
-        "isEmptyCell": function(position) {
+        &quot;isEmptyCell&quot;: function(position) {
             var x = position.x,
                 y = position.y,
                 snakePosition = Snake.position,
@@ -858,16 +951,16 @@ window.setTimeout(function() {
                 i = 0,
                 len = 0;
 
-            if (x < 0 || y < 0 || x >= gameZoneCell.x || y >= gameZoneCell.y) {
+            if (x &lt; 0 || y &lt; 0 || x &gt;= gameZoneCell.x || y &gt;= gameZoneCell.y) {
                 return false;
             }
 
-            if (x === beanPosition.x && y === beanPosition.y) {
+            if (x === beanPosition.x &amp;&amp; y === beanPosition.y) {
                 return false;
             }
 
-            for (i = 0, len = snakePosition.x.length; i < len; i++) {
-                if (x === snakePosition.x[i] && y === snakePosition.y[i]) {
+            for (i = 0, len = snakePosition.x.length; i &lt; len; i++) {
+                if (x === snakePosition.x[i] &amp;&amp; y === snakePosition.y[i]) {
                     return false;
                 }
             }
@@ -880,16 +973,16 @@ window.setTimeout(function() {
          * @method putElement2Cell
          * @for GameControl
          * @param  {HEMLElement} element  需要显示的DOM对象
-         * @param  {Object} position 指定的位置对象，该对象内包含两个Number类型的属性 "x", "y"
+         * @param  {Object} position 指定的位置对象，该对象内包含两个Number类型的属性 &quot;x&quot;, &quot;y&quot;
          * @param  {Number} position.x 指定的位置的横向坐标
          * @param  {Number} position.y 指定的位置的纵向坐标
          * @return {GameControl}          返回 this 对象，即调用该方法的对象本身
          */
-        "putElement2Cell": function(element, position) {
+        &quot;putElement2Cell&quot;: function(element, position) {
             var gameZoneCell = GameZone.cellSize;
 
-            element.style.left = position.x * gameZoneCell.metaWidth + "px";
-            element.style.top = position.y * gameZoneCell.metaHeight + "px";
+            element.style.left = position.x * gameZoneCell.metaWidth + &quot;px&quot;;
+            element.style.top = position.y * gameZoneCell.metaHeight + &quot;px&quot;;
 
             return this;
         },
@@ -901,24 +994,24 @@ window.setTimeout(function() {
          * @param  {Event} event 事件对象
          * @return {Boolean}       若按键有效返回true, 否则返回false
          */
-        "keyPress": function(event) {
+        &quot;keyPress&quot;: function(event) {
             var eventUtil = Util.Event,
                 that = GameControl,
                 pressKey = eventUtil.getEvent(event).keyCode,
                 participant = that.participants[0],
-                playerDirection = "",
-                playerKey = "";
+                playerDirection = &quot;&quot;,
+                playerKey = &quot;&quot;;
 
             for (playerKey in participant.player.keyCode) {
                 if (pressKey === participant.player.keyCode[playerKey]) {
                     playerDirection = participant.currentDirection;
-                    if (playerDirection === that.SNAKEDIRECTION[0] && playerKey !== that.SNAKEDIRECTION[2]) {
+                    if (playerDirection === that.SNAKEDIRECTION[0] &amp;&amp; playerKey !== that.SNAKEDIRECTION[2]) {
                         participant.nextDirection = playerKey;
-                    } else if (playerDirection === that.SNAKEDIRECTION[1] && playerKey !== that.SNAKEDIRECTION[3]) {
+                    } else if (playerDirection === that.SNAKEDIRECTION[1] &amp;&amp; playerKey !== that.SNAKEDIRECTION[3]) {
                         participant.nextDirection = playerKey;
-                    } else if (playerDirection === that.SNAKEDIRECTION[2] && playerKey !== that.SNAKEDIRECTION[0]) {
+                    } else if (playerDirection === that.SNAKEDIRECTION[2] &amp;&amp; playerKey !== that.SNAKEDIRECTION[0]) {
                         participant.nextDirection = playerKey;
-                    } else if (playerDirection === that.SNAKEDIRECTION[3] && playerKey !== that.SNAKEDIRECTION[1]) {
+                    } else if (playerDirection === that.SNAKEDIRECTION[3] &amp;&amp; playerKey !== that.SNAKEDIRECTION[1]) {
                         participant.nextDirection = playerKey;
                     }
                     return true;
@@ -932,19 +1025,19 @@ window.setTimeout(function() {
          * 判断游戏是否结束，游戏结束条件， Snake 对象运行到本身对象所处的位置上，即 贪吃蛇吃到了自己
          * @method isGameOver
          * @for GameControl
-         * @param  {Object} newPosition 贪吃蛇下一步运动到的新位置，该参数对象包含两个 Number 类型的对象属性"x", "y"
+         * @param  {Object} newPosition 贪吃蛇下一步运动到的新位置，该参数对象包含两个 Number 类型的对象属性&quot;x&quot;, &quot;y&quot;
          * @param  {Number} newPosition.x 新位置的横向坐标
          * @param  {Number} newPosition.y 新位置的纵向坐标
          * @return {Boolean}            若贪吃蛇吃到了自己则游戏结束返回true, 否则返回false
          */
-        "isGameOver": function(newPosition) {
+        &quot;isGameOver&quot;: function(newPosition) {
             var that = GameControl,
                 snakePosition = that.participants[0].snake.position,
                 i = 0,
                 len = 0;
 
-            for (i = 0, len = snakePosition.x.length; i < len; i++) {
-                if (newPosition.x === snakePosition.x[i] && newPosition.y === snakePosition.y[i]) {
+            for (i = 0, len = snakePosition.x.length; i &lt; len; i++) {
+                if (newPosition.x === snakePosition.x[i] &amp;&amp; newPosition.y === snakePosition.y[i]) {
                     return true;
                 }
             }
@@ -956,13 +1049,13 @@ window.setTimeout(function() {
          * 判断 Snake 运行的新位置是否包含有 Bean 对象， 即贪吃蛇是否吃到豆子
          * @method isEatBean
          * @for GameControl
-         * @param  {Object} newPosition Snake对象要运行的新位置坐标，该参数对象包含两个 Number 类型的属性"x", "y"
+         * @param  {Object} newPosition Snake对象要运行的新位置坐标，该参数对象包含两个 Number 类型的属性&quot;x&quot;, &quot;y&quot;
          * @param  {Number} newPosition.x 新位置的横向坐标
          * @param  {Number} newPosition.y 新位置的纵向坐标
          * @return {Boolean}            如果吃到豆子返回true, 否则返回false
          */
-        "isEatBean": function(newPosition) {
-            if (newPosition.x === Bean.position.x && newPosition.y === Bean.position.y) {
+        &quot;isEatBean&quot;: function(newPosition) {
+            if (newPosition.x === Bean.position.x &amp;&amp; newPosition.y === Bean.position.y) {
                 return true;
             }
 
@@ -975,7 +1068,7 @@ window.setTimeout(function() {
          * @for GameControl
          * @return {GameControl} 返回 this 对象，即调用方法的对象本身
          */
-        "increaseScore": function() {
+        &quot;increaseScore&quot;: function() {
             var that = GameControl,
                 player = that.participants[0].player;
 
@@ -988,16 +1081,16 @@ window.setTimeout(function() {
          * 游戏结束, Snake 对象停止运行
          * @return {GameControl} 返回 this 对象，即调动方法的对象本身
          */
-        "gameOver": function() {
+        &quot;gameOver&quot;: function() {
             var eventUtil = Util.Event,
                 that = GameControl;
 
-            eventUtil.removeHandler(window, "keyup", that.keyPress);
+            eventUtil.removeHandler(window, &quot;keyup&quot;, that.keyPress);
 
             window.clearTimeout(that.timeout);
             console.log(that.timeout);
 
-            alert("Game Over");
+            alert(&quot;Game Over&quot;);
 
             return this;
         }
@@ -1009,3 +1102,22 @@ window.setTimeout(function() {
 
 
 }, 0);
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

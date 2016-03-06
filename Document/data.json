@@ -1,0 +1,1060 @@
+{
+    "project": {},
+    "files": {
+        "snake.js": {
+            "name": "snake.js",
+            "modules": {
+                "Util": 1,
+                "Snake Game": 1
+            },
+            "classes": {
+                "Event": 1,
+                "Dom": 1,
+                "Player": 1,
+                "Snake": 1,
+                "Bean": 1,
+                "ScorePanel": 1,
+                "GameZone": 1,
+                "GameControl": 1
+            },
+            "fors": {
+                "Util": 1,
+                "Event": 1,
+                "Dom": 1,
+                "Player": 1,
+                "Snake": 1,
+                "Bean": 1,
+                "ScorePanel": 1,
+                "GameZone": 1,
+                "GameControl": 1
+            },
+            "namespaces": {}
+        }
+    },
+    "modules": {
+        "Util": {
+            "name": "Util",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "Util": 1,
+                "Event": 1
+            },
+            "fors": {
+                "Util": 1,
+                "Event": 1,
+                "Dom": 1
+            },
+            "namespaces": {},
+            "tag": "module",
+            "file": "snake.js",
+            "line": 47,
+            "description": "包含一些库函数"
+        },
+        "Snake Game": {
+            "name": "Snake Game",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "Dom": 1,
+                "Player": 1,
+                "Snake": 1,
+                "Bean": 1,
+                "ScorePanel": 1,
+                "GameZone": 1,
+                "GameControl": 1
+            },
+            "fors": {
+                "Player": 1,
+                "Snake": 1,
+                "Bean": 1,
+                "ScorePanel": 1,
+                "GameZone": 1,
+                "GameControl": 1
+            },
+            "namespaces": {},
+            "tag": "module",
+            "file": "snake.js",
+            "line": 566
+        }
+    },
+    "classes": {
+        "Util": {
+            "name": "Util",
+            "shortname": "Util",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Util",
+            "namespace": ""
+        },
+        "Event": {
+            "name": "Event",
+            "shortname": "Event",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Util",
+            "namespace": "",
+            "file": "snake.js",
+            "line": 47,
+            "description": "一些与事件相关的库函数"
+        },
+        "Dom": {
+            "name": "Dom",
+            "shortname": "Dom",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Snake Game",
+            "namespace": "",
+            "file": "snake.js",
+            "line": 205,
+            "description": "与Dom操作有关的库函数"
+        },
+        "Player": {
+            "name": "Player",
+            "shortname": "Player",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Snake Game",
+            "namespace": "",
+            "file": "snake.js",
+            "line": 298,
+            "description": "玩家 类型，",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "name",
+                    "description": "玩家的昵称，可选参数",
+                    "type": "String",
+                    "optional": true,
+                    "optdefault": "S_(random())"
+                },
+                {
+                    "name": "keyCode",
+                    "description": "必须包含\"UP\", \"RIGHT\", \"DOWN\", \"LEFT\",属性的对象。即表示玩家的键位,可选参数",
+                    "type": "Object",
+                    "optional": true,
+                    "optdefault": "{\"UP\": 87, \"RIGHT\": 68, \"DOWN\": 83, \"LEFT\": 65,}",
+                    "props": [
+                        {
+                            "name": "UP",
+                            "description": "向上的键位编码",
+                            "type": "Number",
+                            "optional": true,
+                            "optdefault": "87"
+                        },
+                        {
+                            "name": "RIGHT",
+                            "description": "向右的键位编码",
+                            "type": "Number",
+                            "optional": true,
+                            "optdefault": "68"
+                        },
+                        {
+                            "name": "DOWN",
+                            "description": "向下的键位编码",
+                            "type": "Number",
+                            "optional": true,
+                            "optdefault": "83"
+                        },
+                        {
+                            "name": "left",
+                            "description": "想做的键位编码",
+                            "type": "Number",
+                            "optional": true,
+                            "optdefault": "65"
+                        }
+                    ]
+                }
+            ],
+            "example": [
+                "\n    var Tom = new player(\"Tom\");\n    var Jerry = Player();"
+            ]
+        },
+        "Snake": {
+            "name": "Snake",
+            "shortname": "Snake",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Snake Game",
+            "namespace": "",
+            "file": "snake.js",
+            "line": 377,
+            "description": "贪吃蛇对象"
+        },
+        "Bean": {
+            "name": "Bean",
+            "shortname": "Bean",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Snake Game",
+            "namespace": "",
+            "file": "snake.js",
+            "line": 443,
+            "description": "贪吃蛇所吃的 豆子 对象"
+        },
+        "ScorePanel": {
+            "name": "ScorePanel",
+            "shortname": "ScorePanel",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Snake Game",
+            "namespace": "",
+            "file": "snake.js",
+            "line": 490,
+            "description": "计分板 对象"
+        },
+        "GameZone": {
+            "name": "GameZone",
+            "shortname": "GameZone",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Snake Game",
+            "namespace": "",
+            "file": "snake.js",
+            "line": 528,
+            "description": "进行游戏的栅格区"
+        },
+        "GameControl": {
+            "name": "GameControl",
+            "shortname": "GameControl",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Snake Game",
+            "namespace": "",
+            "file": "snake.js",
+            "line": 566,
+            "description": "整个应用的 中介者(Mediator)，\n应用的各个模块互相没有直接的通信，全部通过 GameControl 对象来进行通信控制。"
+        }
+    },
+    "elements": {},
+    "classitems": [
+        {
+            "file": "snake.js",
+            "line": 11,
+            "description": "命名空间创建属性链 方法",
+            "itemtype": "method",
+            "name": "createChain",
+            "chainable": 1,
+            "params": [
+                {
+                    "name": "nsString",
+                    "description": "命名空间属性链链，链直接以属性开始",
+                    "type": "String"
+                },
+                {
+                    "name": "callback",
+                    "description": "创建完成后的回调函数",
+                    "type": "Function",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "返回调用对象本身",
+                "type": "Namespace"
+            },
+            "example": [
+                "\n    MyNameSpace.createChain(\"myProtype.protype\", function() {\n        alert(\"create success!\");\n    });"
+            ],
+            "class": "Util",
+            "module": "Util"
+        },
+        {
+            "file": "snake.js",
+            "line": 53,
+            "description": "为DOM元素绑定事件，动态定义函数，第一次运行时进行浏览器能力检测并重定义函数",
+            "itemtype": "method",
+            "name": "addHandler",
+            "params": [
+                {
+                    "name": "element",
+                    "description": "要绑定事件的DOM对象",
+                    "type": "HTMLElement"
+                },
+                {
+                    "name": "type",
+                    "description": "绑定事件的类型",
+                    "type": "String"
+                },
+                {
+                    "name": "handler",
+                    "description": "事件处理函数",
+                    "type": "Function"
+                }
+            ],
+            "return": {
+                "description": "进行事件绑定的DOM对象",
+                "type": "HTMLElement"
+            },
+            "class": "Event",
+            "module": "Util"
+        },
+        {
+            "file": "snake.js",
+            "line": 85,
+            "description": "为DOM元素移除事件，动态定义函数，第一次运行时进行浏览器能力检测并重定义函数",
+            "itemtype": "method",
+            "name": "removeHandler",
+            "params": [
+                {
+                    "name": "element",
+                    "description": "要移除事件绑定的DOM对象",
+                    "type": "HTMLElement"
+                },
+                {
+                    "name": "type",
+                    "description": "移除绑定事件的类型",
+                    "type": "String"
+                },
+                {
+                    "name": "handler",
+                    "description": "移除的事件处理函数",
+                    "type": "Function"
+                }
+            ],
+            "return": {
+                "description": "要移除事件绑定的DOM对象",
+                "type": "HTMLElement"
+            },
+            "class": "Event",
+            "module": "Util"
+        },
+        {
+            "file": "snake.js",
+            "line": 118,
+            "description": "获取事件Event对象，为了兼容获取IE下的 DOM0级 事件方法的 event 对象。\nIE下 DOM0级 事件对象为 window 对象的一个属性即 window.event, 其他情况下 event 作为一个参数传给事件处理函数。",
+            "itemtype": "method",
+            "name": "getEvent",
+            "params": [
+                {
+                    "name": "event",
+                    "description": "事件处理函数获得的事件对象",
+                    "type": "Event"
+                }
+            ],
+            "return": {
+                "description": "经过检测得到的真正的事件对象",
+                "type": "Event"
+            },
+            "class": "Event",
+            "module": "Util"
+        },
+        {
+            "file": "snake.js",
+            "line": 130,
+            "description": "获得发生事件的目标DOM对象。\n该对象保存在IE事件对象的 srcElement 属性中，其他情况在 target 属性中",
+            "itemtype": "method",
+            "name": "getTarget",
+            "params": [
+                {
+                    "name": "event",
+                    "description": "事件对象",
+                    "type": "Event"
+                }
+            ],
+            "return": {
+                "description": "发生事件的目标DOM对象",
+                "type": "HTMLElement"
+            },
+            "class": "Event",
+            "module": "Util"
+        },
+        {
+            "file": "snake.js",
+            "line": 144,
+            "description": "阻止事件继续向DOM树顶级冒泡。兼容IE,动态定义函数，第一次运行时进行浏览器能力检测并重新定义函数",
+            "itemtype": "method",
+            "name": "stopPropagation",
+            "params": [
+                {
+                    "name": "event",
+                    "description": "事件对象",
+                    "type": "Event"
+                }
+            ],
+            "return": {
+                "description": "事件的目标DOM元素",
+                "type": "HTMLElement"
+            },
+            "class": "Event",
+            "module": "Util"
+        },
+        {
+            "file": "snake.js",
+            "line": 169,
+            "description": "阻止浏览器事件的默认行为。兼容IE，动态定义函数，第一次运行时进行浏览器能力检测并重新定义函数",
+            "itemtype": "method",
+            "name": "preventDefault",
+            "params": [
+                {
+                    "name": "event",
+                    "description": "事件对象",
+                    "type": "Event"
+                }
+            ],
+            "return": {
+                "description": "事件的目标DOM元素",
+                "type": "HTMLElement"
+            },
+            "class": "Event",
+            "module": "Util"
+        },
+        {
+            "file": "snake.js",
+            "line": 194,
+            "description": "获取键盘事件的按键编码。兼容IE。",
+            "itemtype": "method",
+            "name": "getCharCode",
+            "params": [
+                {
+                    "name": "event",
+                    "description": "事件对象",
+                    "type": "Event"
+                }
+            ],
+            "return": {
+                "description": "按键编码",
+                "type": "Number"
+            },
+            "class": "Event",
+            "module": "Util"
+        },
+        {
+            "file": "snake.js",
+            "line": 211,
+            "description": "编辑DOM对象的className。使用最新的HTML5的classList对象操作对象className,若浏览器不支持则采用“手动”处理的方式。\n动态定义函数，第一次运行时进行浏览器能力检测并重新定义函数。",
+            "itemtype": "method",
+            "name": "editClassName",
+            "params": [
+                {
+                    "name": "element",
+                    "description": "要进行类名操作的DOM对象",
+                    "type": "HTMLElement"
+                },
+                {
+                    "name": "option",
+                    "description": "操作类型，只能为[\"add\", \"remove\", \"contains\", \"toggle\"]中的一个，若不为要求字符串其中之一则抛出错误。",
+                    "type": "String"
+                },
+                {
+                    "name": "classString",
+                    "description": "要进行编辑的类名",
+                    "type": "[String]"
+                }
+            ],
+            "return": {
+                "description": "若option为\"contains\",则返回一个Boolean表示检测包含的结果，若为其他操作则返回类名操作的DOM对象",
+                "type": "HTMLElement|Boolean"
+            },
+            "class": "Dom",
+            "module": "Util"
+        },
+        {
+            "file": "snake.js",
+            "line": 271,
+            "description": "获得Dom元素最终计算后的style。\n兼容IE，为动态定义函数，第一次运行时进行浏览器能力检测并重新定义函数",
+            "itemtype": "method",
+            "name": "getComputedStyle",
+            "params": [
+                {
+                    "name": "element",
+                    "description": "要获取style的DOM对象",
+                    "type": "HTMLElement"
+                }
+            ],
+            "return": {
+                "description": "DOM对象的style对象",
+                "type": "CSSStyleDeclaration"
+            },
+            "class": "Dom",
+            "module": "Util"
+        },
+        {
+            "file": "snake.js",
+            "line": 329,
+            "description": "玩家的游戏等级，涉及到每次的得分和游戏速度",
+            "itemtype": "property",
+            "name": "SpeedLevel",
+            "type": "{Number}",
+            "class": "Player",
+            "module": "Snake Game"
+        },
+        {
+            "file": "snake.js",
+            "line": 337,
+            "description": "玩家的分数",
+            "itemtype": "property",
+            "name": "score",
+            "type": "{Number}",
+            "class": "Player",
+            "module": "Snake Game"
+        },
+        {
+            "file": "snake.js",
+            "line": 345,
+            "description": "玩家的键位，必须包含四个属性\"UP\", \"RIGHT\", \"DOWN\", \"LEFT\",且每个属性的类型为 Number， 表示键位的编码\n可由用户自定义，若用户未输入，则使用默认的\"W、A、S、D\"，来控制方向",
+            "itemtype": "property",
+            "name": "keyCode",
+            "type": "{[Object]}",
+            "class": "Player",
+            "module": "Snake Game"
+        },
+        {
+            "file": "snake.js",
+            "line": 354,
+            "description": "玩家的昵称\n可由用户自定义，若用户未输入，则自动生成以 S_ 为前缀，后跟随机数的随机用户名",
+            "itemtype": "property",
+            "name": "name",
+            "type": "{String}",
+            "class": "Player",
+            "module": "Snake Game"
+        },
+        {
+            "file": "snake.js",
+            "line": 363,
+            "description": "依据当前玩家分数刷新玩家等级",
+            "itemtype": "method",
+            "name": "flushSpeedLevel",
+            "return": {
+                "description": "返回 this 对象, 即调用方法的Player对象本身",
+                "type": "Player"
+            },
+            "class": "Player",
+            "module": "Snake Game"
+        },
+        {
+            "file": "snake.js",
+            "line": 382,
+            "description": "一个立即执行函数，对象定义期间运行\n返回一个包含组成 Snake 对象的DOM对象数组",
+            "itemtype": "property",
+            "name": "element",
+            "type": "{Array}",
+            "class": "Snake",
+            "module": "Snake Game"
+        },
+        {
+            "file": "snake.js",
+            "line": 395,
+            "description": "包含组成 Snake 对象的DOM对象的各个对象的位置坐标\n该属性为一个包含名为 x的数组 与 y的数组 的对象\nx,y分别代表了DOM对象在游戏栅格区的位置，且数组序号与 element数组一一对应",
+            "itemtype": "property",
+            "name": "position",
+            "type": "{Object}",
+            "class": "Snake",
+            "module": "Snake Game"
+        },
+        {
+            "file": "snake.js",
+            "line": 408,
+            "description": "一个立即执行函数，对象定义期间运行，返回一个对象\n对象组成 Snake 对象的单个 DOM 对象的尺寸的一个Object对象，对象包含两个 Number 类型的属性\"width\", \"height\"",
+            "itemtype": "property",
+            "name": "bodySize",
+            "type": "{Object}",
+            "class": "Snake",
+            "module": "Snake Game"
+        },
+        {
+            "file": "snake.js",
+            "line": 427,
+            "description": "深拷贝一个组成 Snake 的DOM对象并返回",
+            "itemtype": "method",
+            "name": "generateNewBody",
+            "return": {
+                "description": "组成 Snake 的原DOM对象",
+                "type": "HTMLElement"
+            },
+            "class": "Snake",
+            "module": "Snake Game"
+        },
+        {
+            "file": "snake.js",
+            "line": 448,
+            "description": "一个立即执行函数，在对象定义期间运行\n返回一个HTMLElement对象，为 Bean DOM对象",
+            "porperty": "element",
+            "type": "{HTMLElement}",
+            "class": "Bean",
+            "module": "Snake Game"
+        },
+        {
+            "file": "snake.js",
+            "line": 459,
+            "description": "包含 Bean 当前位于游戏栅格区的位置，为一个 Object 对象，对象有两个 Number 类型的属性\"x\",\"y\"",
+            "itemtype": "property",
+            "name": "position",
+            "type": "{Objext}",
+            "class": "Bean",
+            "module": "Snake Game"
+        },
+        {
+            "file": "snake.js",
+            "line": 470,
+            "description": "一个立即执行函数，在对象定义期间运行\n返回一个对象包含 Bean 对象的 DOM对象的大小，即宽和高，该 Object 对象包含两个 Number 类型的属性\"width\", \"height\"",
+            "itemtype": "property",
+            "name": "size",
+            "type": "{Object}",
+            "class": "Bean",
+            "module": "Snake Game"
+        },
+        {
+            "file": "snake.js",
+            "line": 495,
+            "description": "一个立即执行函数，在对象定义的期间运行\n返回一个包含组成 SocrePanel 的DOM对象的 Object 对象，该对象包含两个 HTMLElement 类型的属性,\"name\", \"score\"",
+            "itemtype": "property",
+            "name": "element",
+            "type": "{Object}",
+            "class": "ScorePanel",
+            "module": "Snake Game"
+        },
+        {
+            "file": "snake.js",
+            "line": 511,
+            "description": "刷新计分板的显示",
+            "itemtype": "method",
+            "name": "flushScore",
+            "params": [
+                {
+                    "name": "player",
+                    "description": "包含要显示游戏分数的对象，该Object 对象必须包含两个属性 \"name\", \"score\"",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "name",
+                            "description": "包含要显示游戏分数的对象名称",
+                            "type": "String"
+                        },
+                        {
+                            "name": "score",
+                            "description": "包含要显示游戏分数的对象分数",
+                            "type": "Number"
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "返回this,即调用该方法的对象",
+                "type": "ScorePanel"
+            },
+            "class": "ScorePanel",
+            "module": "Snake Game"
+        },
+        {
+            "file": "snake.js",
+            "line": 533,
+            "description": "一个立即执行函数，在对象定义的期间运行\n返回一个包含游戏栅格区实际大小的 Object 对象， 该对象包含两个 Number 类型的属性\"width\", \"height\"",
+            "itemtype": "property",
+            "name": "size",
+            "type": "{Objext}",
+            "class": "GameZone",
+            "module": "Snake Game"
+        },
+        {
+            "file": "snake.js",
+            "line": 552,
+            "description": "包含游戏区栅格化后的数据，该对象包含四个 Number 类型的属性，”x\" 横向的栅格数量，\"y\" 纵向的栅格数量，\"metaWidth\" 元栅格的宽，\"metaHeight\" 元栅格的高",
+            "itemtype": "property",
+            "name": "callSize",
+            "type": "{Object}",
+            "class": "GameZone",
+            "module": "Snake Game"
+        },
+        {
+            "file": "snake.js",
+            "line": 572,
+            "description": "游戏的参与者数组数组成员为 Object 对象，\n对象包括四个属性\"player\" 玩家对象，\"Snake\" 玩家对应的 Snake 对象，\"currentDirection\" 当前贪吃蛇的运动方向，\"nextDirection\" 即将转换的方向",
+            "itemtype": "property",
+            "name": "participants",
+            "type": "{Array}",
+            "class": "GameControl",
+            "module": "Snake Game"
+        },
+        {
+            "file": "snake.js",
+            "line": 581,
+            "description": "Snake 的运动方向的枚举数组，常量不可更改",
+            "itemtype": "property",
+            "name": "SNAKEDIRECTION",
+            "type": "{Array}",
+            "readonly": "",
+            "class": "GameControl",
+            "module": "Snake Game"
+        },
+        {
+            "file": "snake.js",
+            "line": 590,
+            "description": "Snake 的每次移动的初始间隔时间，即 Snake 的速度，常量不可更改",
+            "itemtype": "property",
+            "name": "INITIALSPEED",
+            "type": "{Number}",
+            "readonly": "",
+            "class": "GameControl",
+            "module": "Snake Game"
+        },
+        {
+            "file": "snake.js",
+            "line": 599,
+            "description": "游戏玩家的最高等级，常量不可更改",
+            "itemtype": "property",
+            "name": "MAXSPEEDLEVEL",
+            "type": "{Number}",
+            "readonly": "",
+            "class": "GameControl",
+            "module": "Snake Game"
+        },
+        {
+            "file": "snake.js",
+            "line": 608,
+            "description": "中介者对象的初始化方法，包括生成 Snake Bean Player、初始化游戏栅格网等操作。",
+            "itemtype": "method",
+            "name": "init",
+            "return": {
+                "description": "返回 this, 即调用初始化的对象",
+                "type": "GameContol"
+            },
+            "class": "GameControl",
+            "module": "Snake Game"
+        },
+        {
+            "file": "snake.js",
+            "line": 636,
+            "description": "初始化游戏区栅格网方法，通过计算游戏区大小，Snake Bean对象的 DOM对象的大小来将游戏区初始化为一个栅格网并存储在 GameZone 对象中",
+            "itemtype": "method",
+            "name": "calculateGameZoneCellSize",
+            "return": {
+                "description": "返回this，即调用该方法的对象",
+                "type": "GameControl"
+            },
+            "class": "GameControl",
+            "module": "Snake Game"
+        },
+        {
+            "file": "snake.js",
+            "line": 651,
+            "description": "在游戏栅格区随机选取位置生成 Snake",
+            "itemtype": "method",
+            "name": "generateSnake",
+            "return": {
+                "description": "返回 this 对象，即调用方法的对象本身",
+                "type": "GameControl"
+            },
+            "class": "GameControl",
+            "module": "Snake Game"
+        },
+        {
+            "file": "snake.js",
+            "line": 688,
+            "description": "使 Snake 对象增加一个元DOM对象，即“成长”，在某个位置（Snake尾部）生成一个新的DOM对象",
+            "itemtype": "method",
+            "name": "SnakeGrowUp",
+            "params": [
+                {
+                    "name": "position",
+                    "description": "栅格区要增加显示元DOM对象的位置，该 Object 对象有两个 Number 类型的属性\"x\", \"y\"",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "x",
+                            "description": "栅格区横向的栅格数量",
+                            "type": "Number"
+                        },
+                        {
+                            "name": "y",
+                            "description": "栅格区纵向的栅格数量",
+                            "type": "Number"
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "返回 this 对象，即调用方法的对象本身；",
+                "type": "GameControl"
+            },
+            "class": "GameControl",
+            "module": "Snake Game"
+        },
+        {
+            "file": "snake.js",
+            "line": 711,
+            "description": "GameControl 对象的核心方法，控制 Snake 对象在游戏栅格区移动并运行相关的判断函数。",
+            "itemtype": "method",
+            "name": "snakeRunning",
+            "return": {
+                "description": "返回GameControl对象",
+                "type": "GameControl"
+            },
+            "class": "GameControl",
+            "module": "Snake Game"
+        },
+        {
+            "file": "snake.js",
+            "line": 779,
+            "description": "将数组内的元素进行交换。对传入的数组进行前拷贝(只拷贝第一维)成新数组后操作并返回\n若索引 index1 为-1，则代表将索引 index2 的元素放置到数组首位。\n若索引 index2 为-1，则代表将索引 index1 的元素放置到元素末位。",
+            "itemtype": "method",
+            "name": "exchangeArrayElementIndex",
+            "params": [
+                {
+                    "name": "array",
+                    "description": "要进行元素交换的数组",
+                    "type": "Array"
+                },
+                {
+                    "name": "index1",
+                    "description": "要交换的元素1的索引",
+                    "type": "Number"
+                },
+                {
+                    "name": "index2",
+                    "description": "要交换的元素2的索引",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "交换后的数组",
+                "type": "Array"
+            },
+            "class": "GameControl",
+            "module": "Snake Game"
+        },
+        {
+            "file": "snake.js",
+            "line": 804,
+            "description": "在栅格区内随机选取位置并显示 Bean DOM对象",
+            "itemtype": "method",
+            "name": "generateBean",
+            "return": {
+                "description": "返回 this 对象，即调用该方法的对象本身",
+                "type": "GameControl"
+            },
+            "class": "GameControl",
+            "module": "Snake Game"
+        },
+        {
+            "file": "snake.js",
+            "line": 824,
+            "description": "获得游戏栅格区内为空的栅格位置对象",
+            "itemtype": "method",
+            "name": "getEmptyCell",
+            "return": {
+                "description": "返回的Object 对象包含两个Number 类型的属性，即\"x\", \"y\"",
+                "type": "Object"
+            },
+            "class": "GameControl",
+            "module": "Snake Game"
+        },
+        {
+            "file": "snake.js",
+            "line": 845,
+            "description": "判断栅格区位置是否为空",
+            "itemtype": "method",
+            "name": "isEmptyCell",
+            "params": [
+                {
+                    "name": "position",
+                    "description": "需要判断的栅格区位置，该 Object对象内必须包含两个 Number 类型的属性\"x\", \"y\"",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "x",
+                            "description": "需要判断的栅格区位置的横向坐标",
+                            "type": "Number"
+                        },
+                        {
+                            "name": "y",
+                            "description": "需要判断的栅格区位置的纵向坐标",
+                            "type": "Number"
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "为空返回true, 否则返回false",
+                "type": "Boolean"
+            },
+            "class": "GameControl",
+            "module": "Snake Game"
+        },
+        {
+            "file": "snake.js",
+            "line": 879,
+            "description": "通过设置DOM对象的style.left 和 style.top 属性使得在指定位置显示DOM对象",
+            "itemtype": "method",
+            "name": "putElement2Cell",
+            "params": [
+                {
+                    "name": "element",
+                    "description": "需要显示的DOM对象",
+                    "type": "HEMLElement"
+                },
+                {
+                    "name": "position",
+                    "description": "指定的位置对象，该对象内包含两个Number类型的属性 \"x\", \"y\"",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "x",
+                            "description": "指定的位置的横向坐标",
+                            "type": "Number"
+                        },
+                        {
+                            "name": "y",
+                            "description": "指定的位置的纵向坐标",
+                            "type": "Number"
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "返回 this 对象，即调用该方法的对象本身",
+                "type": "GameControl"
+            },
+            "class": "GameControl",
+            "module": "Snake Game"
+        },
+        {
+            "file": "snake.js",
+            "line": 898,
+            "description": "键盘事件处理函数，获取键盘按键的按键编码，并与 Player 对象的KeyCode对象比较，判断按键是否有效，并处理 Snake 对象的运行方向",
+            "itemtype": "event",
+            "name": "keyPress",
+            "params": [
+                {
+                    "name": "event",
+                    "description": "事件对象",
+                    "type": "Event"
+                }
+            ],
+            "return": {
+                "description": "若按键有效返回true, 否则返回false",
+                "type": "Boolean"
+            },
+            "class": "GameControl",
+            "module": "Snake Game"
+        },
+        {
+            "file": "snake.js",
+            "line": 932,
+            "description": "判断游戏是否结束，游戏结束条件， Snake 对象运行到本身对象所处的位置上，即 贪吃蛇吃到了自己",
+            "itemtype": "method",
+            "name": "isGameOver",
+            "params": [
+                {
+                    "name": "newPosition",
+                    "description": "贪吃蛇下一步运动到的新位置，该参数对象包含两个 Number 类型的对象属性\"x\", \"y\"",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "x",
+                            "description": "新位置的横向坐标",
+                            "type": "Number"
+                        },
+                        {
+                            "name": "y",
+                            "description": "新位置的纵向坐标",
+                            "type": "Number"
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "若贪吃蛇吃到了自己则游戏结束返回true, 否则返回false",
+                "type": "Boolean"
+            },
+            "class": "GameControl",
+            "module": "Snake Game"
+        },
+        {
+            "file": "snake.js",
+            "line": 956,
+            "description": "判断 Snake 运行的新位置是否包含有 Bean 对象， 即贪吃蛇是否吃到豆子",
+            "itemtype": "method",
+            "name": "isEatBean",
+            "params": [
+                {
+                    "name": "newPosition",
+                    "description": "Snake对象要运行的新位置坐标，该参数对象包含两个 Number 类型的属性\"x\", \"y\"",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "x",
+                            "description": "新位置的横向坐标",
+                            "type": "Number"
+                        },
+                        {
+                            "name": "y",
+                            "description": "新位置的纵向坐标",
+                            "type": "Number"
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "如果吃到豆子返回true, 否则返回false",
+                "type": "Boolean"
+            },
+            "class": "GameControl",
+            "module": "Snake Game"
+        },
+        {
+            "file": "snake.js",
+            "line": 973,
+            "description": "增加玩家的分数，每次增加100分",
+            "itemtype": "method",
+            "name": "increaseScore",
+            "return": {
+                "description": "返回 this 对象，即调用方法的对象本身",
+                "type": "GameControl"
+            },
+            "class": "GameControl",
+            "module": "Snake Game"
+        },
+        {
+            "file": "snake.js",
+            "line": 988,
+            "description": "游戏结束, Snake 对象停止运行",
+            "return": {
+                "description": "返回 this 对象，即调动方法的对象本身",
+                "type": "GameControl"
+            },
+            "class": "GameControl",
+            "module": "Snake Game"
+        }
+    ],
+    "warnings": [
+        {
+            "message": "unknown tag: porperty",
+            "line": " snake.js:448"
+        },
+        {
+            "message": "Missing item type\n一个立即执行函数，在对象定义期间运行\n返回一个HTMLElement对象，为 Bean DOM对象",
+            "line": " snake.js:448"
+        },
+        {
+            "message": "Missing item type\n游戏结束, Snake 对象停止运行",
+            "line": " snake.js:988"
+        }
+    ]
+}

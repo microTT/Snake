@@ -1,3 +1,6 @@
+/**
+ * 重置一些元素的默认样式
+ */
 body,
 div {
     margin: 0;
@@ -8,11 +11,17 @@ body {
     background: #eee;
 }
 
+/**
+ * 页面内容居中
+ */
 .content{
 	margin: 0 auto;
 	text-align: center;
 }
 
+/**
+ * 游戏区设置大小颜色等
+ */
 .game-zone {
     width: 640px;
     height: 640px;
@@ -21,10 +30,16 @@ body {
     margin: 0 auto;
 }
 
+/**
+ * 游戏模型隐藏
+ */
 .game-model {
     display: none;
 }
 
+/**
+ * 游戏模型大小等设置
+ */
 .bean,
 .snake-body {
     width: 10px;

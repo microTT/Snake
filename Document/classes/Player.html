@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Player</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="../assets/css/logo.png" title="" width="117" height="52"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: </em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/Bean.html">Bean</a></li>
+                                <li><a href="../classes/Dom.html">Dom</a></li>
+                                <li><a href="../classes/Event.html">Event</a></li>
+                                <li><a href="../classes/GameControl.html">GameControl</a></li>
+                                <li><a href="../classes/GameZone.html">GameZone</a></li>
+                                <li><a href="../classes/Player.html">Player</a></li>
+                                <li><a href="../classes/ScorePanel.html">ScorePanel</a></li>
+                                <li><a href="../classes/Snake.html">Snake</a></li>
+                                <li><a href="../classes/Util.html">Util</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/Snake Game.html">Snake Game</a></li>
+                                <li><a href="../modules/Util.html">Util</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1>Player Class</h1>
+<div class="box meta">
+
+
+        <div class="foundat">
+            Defined in: <a href="../files/snake.js.html#l298"><code>snake.js:298</code></a>
+        </div>
+
+            Module: <a href="../modules/Snake Game.html">Snake Game</a>
+
+</div>
+
+
+<div class="box intro">
+    <p>玩家 类型，</p>
+
+</div>
+
+    <div class="constructor">
+        <h2>Constructor</h2>
+<div id="method_Player" class="method item">
+    <h3 class="name"><code>Player</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code class="optional">[name=S_(random())]</code>
+                </li>
+                <li class="arg">
+                        <code class="optional">[keyCode={&quot;UP&quot;: 87, &quot;RIGHT&quot;: 68, &quot;DOWN&quot;: 83, &quot;LEFT&quot;: 65,}]</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/snake.js.html#l298"><code>snake.js:298</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name optional">[name=S_(random())]</code>
+                        <span class="type">String</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+
+
+                    <div class="param-description">
+                        <p>玩家的昵称，可选参数</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name optional">[keyCode={&quot;UP&quot;: 87, &quot;RIGHT&quot;: 68, &quot;DOWN&quot;: 83, &quot;LEFT&quot;: 65,}]</code>
+                        <span class="type">Object</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+
+
+                    <div class="param-description">
+                        <p>必须包含&quot;UP&quot;, &quot;RIGHT&quot;, &quot;DOWN&quot;, &quot;LEFT&quot;,属性的对象。即表示玩家的键位,可选参数</p>
+
+                    </div>
+
+                        <ul class="params-list">
+                            <li class="param">
+                                    <code class="param-name optional">[UP=87]</code>
+                                    <span class="type">Number</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                <div class="param-description">
+                                    <p>向上的键位编码</p>
+
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name optional">[RIGHT=68]</code>
+                                    <span class="type">Number</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                <div class="param-description">
+                                    <p>向右的键位编码</p>
+
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name optional">[DOWN=83]</code>
+                                    <span class="type">Number</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                <div class="param-description">
+                                    <p>向下的键位编码</p>
+
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name optional">[left=65]</code>
+                                    <span class="type">Number</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                <div class="param-description">
+                                    <p>想做的键位编码</p>
+
+                                </div>
+
+                            </li>
+                        </ul>
+                </li>
+            </ul>
+        </div>
+
+
+
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>var Tom = new player(&quot;Tom&quot;);
+var Jerry = Player();</code></pre>
+
+            </div>
+        </div>
+</div>
+    </div>
+
+<div id="classdocs" class="tabview">
+    <ul class="api-class-tabs">
+        <li class="api-class-tab index"><a href="#index">Index</a></li>
+
+            <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
+            <li class="api-class-tab properties"><a href="#properties">Properties</a></li>
+    </ul>
+
+    <div>
+        <div id="index" class="api-class-tabpanel index">
+            <h2 class="off-left">Item Index</h2>
+
+                <div class="index-section methods">
+                    <h3>Methods</h3>
+
+                    <ul class="index-list methods">
+                            <li class="index-item method">
+                                <a href="#method_flushSpeedLevel">flushSpeedLevel</a>
+
+                            </li>
+                    </ul>
+                </div>
+
+                <div class="index-section properties">
+                    <h3>Properties</h3>
+
+                    <ul class="index-list properties">
+                            <li class="index-item property">
+                                <a href="#property_keyCode">keyCode</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_name">name</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_score">score</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_SpeedLevel">SpeedLevel</a>
+
+                            </li>
+                    </ul>
+                </div>
+
+
+        </div>
+
+            <div id="methods" class="api-class-tabpanel">
+                <h2 class="off-left">Methods</h2>
+
+<div id="method_flushSpeedLevel" class="method item">
+    <h3 class="name"><code>flushSpeedLevel</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/Player.html" class="crosslink">Player</a></span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/snake.js.html#l363"><code>snake.js:363</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>依据当前玩家分数刷新玩家等级</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type"><a href="../classes/Player.html" class="crosslink">Player</a></span>:
+                    <p>返回 this 对象, 即调用方法的Player对象本身</p>
+
+            </div>
+        </div>
+
+
+</div>
+            </div>
+
+            <div id="properties" class="api-class-tabpanel">
+                <h2 class="off-left">Properties</h2>
+
+<div id="property_keyCode" class="property item">
+    <h3 class="name"><code>keyCode</code></h3>
+    <span class="type">Object</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/snake.js.html#l345"><code>snake.js:345</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>玩家的键位，必须包含四个属性&quot;UP&quot;, &quot;RIGHT&quot;, &quot;DOWN&quot;, &quot;LEFT&quot;,且每个属性的类型为 Number， 表示键位的编码
+可由用户自定义，若用户未输入，则使用默认的&quot;W、A、S、D&quot;，来控制方向</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_name" class="property item">
+    <h3 class="name"><code>name</code></h3>
+    <span class="type">String</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/snake.js.html#l354"><code>snake.js:354</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>玩家的昵称
+可由用户自定义，若用户未输入，则自动生成以 S_ 为前缀，后跟随机数的随机用户名</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_score" class="property item">
+    <h3 class="name"><code>score</code></h3>
+    <span class="type">Number</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/snake.js.html#l337"><code>snake.js:337</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>玩家的分数</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_SpeedLevel" class="property item">
+    <h3 class="name"><code>SpeedLevel</code></h3>
+    <span class="type">Number</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/snake.js.html#l329"><code>snake.js:329</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>玩家的游戏等级，涉及到每次的得分和游戏速度</p>
+
+    </div>
+
+
+
+</div>
+            </div>
+
+
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>
