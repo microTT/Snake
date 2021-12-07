@@ -2,7 +2,7 @@
  * @Author: tongtong.ctt
  * @Date: 2021-12-07 22:55:10
  * @Last Modified by: tongtong.ctt
- * @Last Modified time: 2021-12-07 23:13:33
+ * @Last Modified time: 2021-12-07 23:21:14
  */
 
 const http = require('http');
@@ -39,6 +39,6 @@ server.on('request', (req, res) => {
   }
   res.end(fileContent);
 });
-server.listen(3000, () => {
+server.listen(80, () => {
   console.log('服务器已经启动，可以访问了。。。');
 });
