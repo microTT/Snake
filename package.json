@@ -1,0 +1,20 @@
+{
+  "name": "snake",
+  "version": "1.0.0",
+  "description": "",
+  "main": "snake.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./bin/start.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/microTT/Snake.git"
+  },
+  "author": "microTT",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/microTT/Snake/issues"
+  },
+  "homepage": "https://github.com/microTT/Snake#readme"
+}
