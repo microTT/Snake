@@ -2,7 +2,7 @@
  * @Author: tongtong.ctt
  * @Date: 2021-12-07 22:55:10
  * @Last Modified by: tongtong.ctt
- * @Last Modified time: 2021-12-07 23:21:14
+ * @Last Modified time: 2021-12-08 11:27:12
  */
 
 const http = require('http');
@@ -12,9 +12,19 @@ const path = require('path');
 const server = http.createServer();
 
 function getFilePath(relativePath) {
-  const rootPath = path.join(__dirname, './');
+  // const rootPath = path.join(__dirname, './');
+  const rootPath = __dirname;
   return path.join(rootPath, relativePath);
 }
+
+function readFile(filePath) {
+  try {
+    return fs.readFileSync(filePath, 'utf-8');
+  } catch(error) {
+    return null;
+  }
+}
+
 server.on('request', (req, res) => {
   const url = req.url;
   console.log(url);
@@ -24,7 +34,11 @@ server.on('request', (req, res) => {
     res.end('404');
     return;
   }
-  const fileContent = fs.readFileSync(filePath, 'utf-8');
+  const fileContent = readFile(filePath);
+  if (!fileContent) {
+    res.end('404')
+    return;
+  }
   res.setHeader('Content-Type', 'text/plain; charset=utf-8');
 
   
